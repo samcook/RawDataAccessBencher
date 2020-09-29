@@ -194,9 +194,18 @@
     <Reference Include="NHibernate, Version=5.3.0.0, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
       <HintPath>..\packages\NHibernate.5.3.3\lib\net461\NHibernate.dll</HintPath>
     </Reference>
+    <Reference Include="NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
+      <HintPath>..\packages\NLog.4.7.3\lib\net45\NLog.dll</HintPath>
+    </Reference>
     <Reference Include="NPoco, Version=4.0.2.0, Culture=neutral, PublicKeyToken=null">
       <HintPath>..\packages\NPoco.4.0.2\lib\net45\NPoco.dll</HintPath>
       <Private>True</Private>
+    </Reference>
+    <Reference Include="Platform, Version=1.2.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Platform.NET.1.2.4\lib\net452\Platform.dll</HintPath>
+    </Reference>
+    <Reference Include="Platform.Xml.Serialization, Version=1.2.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Platform.Xml.Serialization.1.2.4\lib\net452\Platform.Xml.Serialization.dll</HintPath>
     </Reference>
     <Reference Include="Remotion.Linq, Version=2.2.0.0, Culture=neutral, PublicKeyToken=fee00910d6e5f53b, processorArchitecture=MSIL">
       <HintPath>..\packages\Remotion.Linq.2.2.0\lib\net45\Remotion.Linq.dll</HintPath>
@@ -230,6 +239,13 @@
     </Reference>
     <Reference Include="ServiceStack.Text, Version=5.0.0.0, Culture=neutral, PublicKeyToken=02c12cbda47e6587, processorArchitecture=MSIL">
       <HintPath>..\packages\ServiceStack.Text.5.9.2\lib\net45\ServiceStack.Text.dll</HintPath>
+    </Reference>
+    <Reference Include="Shaolinq, Version=1.9.5.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\ReferencedAssemblies\Shaolinq.dll</HintPath>
+    </Reference>
+    <Reference Include="Shaolinq.SqlServer">
+      <HintPath>..\ReferencedAssemblies\Shaolinq.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
@@ -274,6 +290,7 @@
     <Reference Include="System.Interactive.Async, Version=4.1.0.0, Culture=neutral, PublicKeyToken=94bc3704cddfc263, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Interactive.Async.4.1.1\lib\net461\System.Interactive.Async.dll</HintPath>
     </Reference>
+    <Reference Include="System.IO.Compression" />
     <Reference Include="System.IO.Compression.FileSystem" />
     <Reference Include="System.Linq.Async, Version=4.1.0.0, Culture=neutral, PublicKeyToken=94bc3704cddfc263, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Linq.Async.4.1.1\lib\net461\System.Linq.Async.dll</HintPath>
@@ -377,6 +394,7 @@
     <Compile Include="Benchers\HandCodedBencherUsingBoxing.cs" />
     <Compile Include="Benchers\LLBLGenProNoChangeTrackingRawSQLPocoBencher.cs" />
     <Compile Include="Benchers\LLBLGenProNoChangeTrackingLinqPocoBencher.cs" />
+    <Compile Include="Benchers\ShaolinqBencher.cs" />
     <Compile Include="Benchers\NPocoBencher.cs" />
     <Compile Include="Benchers\PetaPocoFastBencher.cs" />
     <Compile Include="Benchers\RawDbDataReaderBencher.cs" />
@@ -471,6 +489,10 @@
     <ProjectReference Include="..\NH\DAL\Persistence\NH.Bencher.Persistence.csproj">
       <Project>{3e9ca88c-03ec-445a-960a-242511b6ef55}</Project>
       <Name>NH.Bencher.Persistence</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Shaolinq.Bencher.Model\Shaolinq.Bencher.Model.csproj">
+      <Project>{fd035e87-f767-4301-af2f-560b2d5a270c}</Project>
+      <Name>Shaolinq.Bencher.Model</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
